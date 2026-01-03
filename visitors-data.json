@@ -1,0 +1,353 @@
+{
+  "visitors": [
+    {
+      "error": "Timeout expired",
+      "errorCode": 3,
+      "timestamp": "2026-01-02T15:47:26.988Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+      "device": {
+        "type": "Desktop",
+        "brand": "PC",
+        "model": "Windows",
+        "os": "Windows",
+        "browser": "Edge",
+        "browserVersion": "143.0.0.0",
+        "platform": "Win32",
+        "vendor": "Google Inc.",
+        "isMobile": false,
+        "isTablet": false,
+        "isDesktop": true
+      },
+      "screen": {
+        "width": 1920,
+        "height": 1080,
+        "colorDepth": 24,
+        "pixelRatio": 1
+      },
+      "language": "en-US",
+      "languages": [
+        "en-US",
+        "en"
+      ],
+      "referrer": "http://localhost:3000/",
+      "pageUrl": "http://localhost:3000/visitor-tracker.html",
+      "connection": {
+        "effectiveType": "4g",
+        "downlink": 10,
+        "rtt": "unknown"
+      },
+      "id": "1767368846996",
+      "ip": "::1",
+      "receivedAt": "2026-01-02T15:47:26.998Z",
+      "headers": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+        "acceptLanguage": "en-US,en;q=0.9",
+        "referer": "http://localhost:3000/visitor-tracker.html"
+      }
+    },
+    {
+      "latitude": 3.077545653909957,
+      "longitude": 101.48710463739252,
+      "accuracy": 99,
+      "timestamp": "2026-01-02T15:47:56.548Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+      "device": {
+        "type": "Desktop",
+        "brand": "PC",
+        "model": "Windows",
+        "os": "Windows",
+        "browser": "Edge",
+        "browserVersion": "143.0.0.0",
+        "platform": "Win32",
+        "vendor": "Google Inc.",
+        "isMobile": false,
+        "isTablet": false,
+        "isDesktop": true
+      },
+      "screen": {
+        "width": 1920,
+        "height": 1080,
+        "colorDepth": 24,
+        "pixelRatio": 1
+      },
+      "language": "en-US",
+      "languages": [
+        "en-US",
+        "en"
+      ],
+      "referrer": "http://localhost:3000/",
+      "pageUrl": "http://localhost:3000/visitor-tracker.html",
+      "connection": {
+        "effectiveType": "4g",
+        "downlink": 10,
+        "rtt": "unknown"
+      },
+      "id": "1767368876551",
+      "ip": "::1",
+      "receivedAt": "2026-01-02T15:47:56.551Z",
+      "headers": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+        "acceptLanguage": "en-US,en;q=0.9",
+        "referer": "http://localhost:3000/visitor-tracker.html"
+      }
+    },
+    {
+      "latitude": 3.0774845382897253,
+      "longitude": 101.4871206113837,
+      "accuracy": 100,
+      "timestamp": "2026-01-02T15:56:42.868Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+      "device": {
+        "type": "Desktop",
+        "brand": "PC",
+        "model": "Windows",
+        "os": "Windows",
+        "browser": "Edge",
+        "browserVersion": "143.0.0.0",
+        "platform": "Win32",
+        "vendor": "Google Inc."
+      },
+      "screen": {
+        "width": 1920,
+        "height": 1080,
+        "colorDepth": 24,
+        "pixelRatio": 1
+      },
+      "language": "en-US",
+      "languages": [
+        "en-US",
+        "en"
+      ],
+      "referrer": "http://localhost:3000/",
+      "pageUrl": "http://localhost:3000/visitor-tracker.html",
+      "connection": {
+        "effectiveType": "4g",
+        "downlink": 10,
+        "rtt": "unknown"
+      },
+      "id": "1767369402874",
+      "ip": "::1",
+      "receivedAt": "2026-01-02T15:56:42.874Z",
+      "headers": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+        "acceptLanguage": "en-US,en;q=0.9",
+        "referer": "http://localhost:3000/visitor-tracker.html"
+      }
+    },
+    {
+      "latitude": 3.077465284036747,
+      "longitude": 101.48715092507949,
+      "accuracy": 99,
+      "timestamp": "2026-01-02T15:58:03.360Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+      "device": {
+        "type": "Desktop",
+        "brand": "PC",
+        "model": "Windows",
+        "os": "Windows",
+        "browser": "Edge",
+        "browserVersion": "143.0.0.0",
+        "platform": "Win32",
+        "vendor": "Google Inc."
+      },
+      "screen": {
+        "width": 1920,
+        "height": 1080,
+        "colorDepth": 24,
+        "pixelRatio": 1
+      },
+      "language": "en-US",
+      "languages": [
+        "en-US",
+        "en"
+      ],
+      "referrer": "http://localhost:3000/",
+      "pageUrl": "http://localhost:3000/visitor-tracker.html",
+      "connection": {
+        "effectiveType": "4g",
+        "downlink": 10,
+        "rtt": "unknown"
+      },
+      "id": "1767369483362",
+      "ip": "::1",
+      "receivedAt": "2026-01-02T15:58:03.362Z",
+      "headers": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+        "acceptLanguage": "en-US,en;q=0.9",
+        "referer": "http://localhost:3000/visitor-tracker.html"
+      }
+    },
+    {
+      "latitude": 3.077450812401418,
+      "longitude": 101.48712932017835,
+      "accuracy": 99,
+      "timestamp": "2026-01-02T15:58:51.201Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+      "device": {
+        "type": "Desktop",
+        "brand": "PC",
+        "model": "Windows",
+        "os": "Windows",
+        "browser": "Edge",
+        "browserVersion": "143.0.0.0",
+        "platform": "Win32",
+        "vendor": "Google Inc."
+      },
+      "screen": {
+        "width": 1920,
+        "height": 1080,
+        "colorDepth": 24,
+        "pixelRatio": 1
+      },
+      "language": "en-US",
+      "languages": [
+        "en-US",
+        "en"
+      ],
+      "referrer": "http://localhost:3000/",
+      "pageUrl": "http://localhost:3000/visitor-tracker.html",
+      "connection": {
+        "effectiveType": "4g",
+        "downlink": 10,
+        "rtt": "unknown"
+      },
+      "id": "1767369531206",
+      "ip": "::1",
+      "receivedAt": "2026-01-02T15:58:51.206Z",
+      "headers": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+        "acceptLanguage": "en-US,en;q=0.9",
+        "referer": "http://localhost:3000/visitor-tracker.html"
+      }
+    },
+    {
+      "latitude": 3.0774393485686273,
+      "longitude": 101.4871262979852,
+      "accuracy": 99,
+      "timestamp": "2026-01-02T15:59:55.111Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+      "device": {
+        "type": "Desktop",
+        "brand": "PC",
+        "model": "Windows",
+        "os": "Windows",
+        "browser": "Edge",
+        "browserVersion": "143.0.0.0",
+        "platform": "Win32",
+        "vendor": "Google Inc."
+      },
+      "screen": {
+        "width": 1920,
+        "height": 1080,
+        "colorDepth": 24,
+        "pixelRatio": 1
+      },
+      "language": "en-US",
+      "languages": [
+        "en-US",
+        "en"
+      ],
+      "referrer": "http://localhost:3000/",
+      "pageUrl": "http://localhost:3000/visitor-tracker.html",
+      "connection": {
+        "effectiveType": "4g",
+        "downlink": 10,
+        "rtt": "unknown"
+      },
+      "id": "1767369595115",
+      "ip": "::1",
+      "receivedAt": "2026-01-02T15:59:55.115Z",
+      "headers": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+        "acceptLanguage": "en-US,en;q=0.9",
+        "referer": "http://localhost:3000/visitor-tracker.html"
+      }
+    },
+    {
+      "latitude": 3.0774358923438276,
+      "longitude": 101.48712390377528,
+      "accuracy": 99,
+      "timestamp": "2026-01-02T16:00:31.963Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+      "device": {
+        "type": "Desktop",
+        "brand": "PC",
+        "model": "Windows",
+        "os": "Windows",
+        "browser": "Edge",
+        "browserVersion": "143.0.0.0",
+        "platform": "Win32",
+        "vendor": "Google Inc."
+      },
+      "screen": {
+        "width": 1920,
+        "height": 1080,
+        "colorDepth": 24,
+        "pixelRatio": 1
+      },
+      "language": "en-US",
+      "languages": [
+        "en-US",
+        "en"
+      ],
+      "referrer": "http://localhost:3000/",
+      "pageUrl": "http://localhost:3000/visitor-tracker.html",
+      "connection": {
+        "effectiveType": "4g",
+        "downlink": 10,
+        "rtt": "unknown"
+      },
+      "id": "1767369631967",
+      "ip": "::1",
+      "receivedAt": "2026-01-02T16:00:31.967Z",
+      "headers": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+        "acceptLanguage": "en-US,en;q=0.9",
+        "referer": "http://localhost:3000/visitor-tracker.html"
+      }
+    },
+    {
+      "latitude": 3.0774631181621825,
+      "longitude": 101.487138190988,
+      "accuracy": 99,
+      "timestamp": "2026-01-02T16:31:28.518Z",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+      "device": {
+        "type": "Desktop",
+        "brand": "PC",
+        "model": "Windows",
+        "os": "Windows",
+        "browser": "Edge",
+        "browserVersion": "143.0.0.0",
+        "platform": "Win32",
+        "vendor": "Google Inc."
+      },
+      "screen": {
+        "width": 1920,
+        "height": 1080,
+        "colorDepth": 24,
+        "pixelRatio": 1
+      },
+      "language": "en-US",
+      "languages": [
+        "en-US",
+        "en"
+      ],
+      "referrer": "http://localhost:3000/",
+      "pageUrl": "http://localhost:3000/visitor-tracker.html",
+      "connection": {
+        "effectiveType": "4g",
+        "downlink": 10,
+        "rtt": "unknown"
+      },
+      "id": "1767371488556",
+      "ip": "::1",
+      "receivedAt": "2026-01-02T16:31:28.557Z",
+      "headers": {
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36 Edg/143.0.0.0",
+        "acceptLanguage": "en-US,en;q=0.9",
+        "referer": "http://localhost:3000/visitor-tracker.html"
+      }
+    }
+  ]
+}

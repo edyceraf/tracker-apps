@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Location Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .status {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-weight: 600;
+        }
+
+        .status.info {
+            background: #e0e7ff;
+            color: #4338ca;
+        }
+
+        .status.success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status.error {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn:hover {
+            background: #5568d3;
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .data-display {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 14px;
+            white-space: pre-wrap;
+            word-break: break-all;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .link-btn {
+            background: #10b981;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .link-btn:hover {
+            background: #059669;
+        }
+
+        .info-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+
+        .step {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>🧪 Test Location Tracker</h1>
+            <p>Halaman ini untuk test sistem location tracking anda.</p>
+
+            <div class="info-box">
+                <strong>ℹ️ Nota:</strong> Endpoint <code>/api/track-visitor</code> adalah untuk POST request. Anda tidak boleh test dengan buka URL dalam browser (kerana browser buat GET request).
+            </div>
+
+            <div class="status info" id="status">
+                ⏳ Klik butang di bawah untuk test sistem
+            </div>
+
+            <div style="margin: 20px 0;">
+                <button class="btn" onclick="testLocationTracking()">
+                    📍 Test Location Tracking
+                </button>
+                <button class="btn" onclick="fetchAllVisitors()">
+                    📊 Fetch All Visitors
+                </button>
+                <button class="btn" onclick="fetchStats()">
+                    📈 Fetch Stats
+                </button>
+            </div>
+
+            <div id="responseData"></div>
+        </div>
+
+        <div class="card">
+            <h2>📋 Cara Guna Sistem:</h2>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Untuk Visitor (Public):</strong>
+                <br>Gunakan <code>visitor-tracker.html</code> - page ini akan auto-detect lokasi
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Untuk Admin (Anda):</strong>
+                <br>Buka dashboard untuk view semua visitor
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Test Manual:</strong>
+                <br>Gunakan halaman ini untuk test API endpoints
+            </div>
+
+            <div class="links" style="margin-top: 20px;">
+                <a href="/visitor-tracker.html" class="link-btn">👤 Visitor Page</a>
+                <a href="/dashboard.html" class="link-btn">📊 Admin Dashboard</a>
+                <a href="/" class="link-btn">🏠 Home</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>🔗 API Endpoints:</h2>
+            <div style="margin-top: 15px;">
+                <div style="margin: 10px 0;">
+                    <strong>POST</strong> <code>/api/track-visitor</code> - Track visitor location
+                </div>
+                <div style="margin: 10px 0;">
+                    <strong>GET</strong> <code>/api/visitors</code> - Get all visitors
+                </div>
+                <div style="margin: 10px 0;">
+                    <strong>GET</strong> <code>/api/stats</code> - Get statistics
+                </div>
+                <div style="margin: 10px 0;">
+                    <strong>DELETE</strong> <code>/api/visitors/:id</code> - Delete specific visitor
+                </div>
+                <div style="margin: 10px 0;">
+                    <strong>DELETE</strong> <code>/api/visitors</code> - Clear all data
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'https://network.acaphacker.qzz.io';
+
+        function getDeviceType() {
+            const ua = navigator.userAgent;
+            if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+                return 'Tablet';
+            }
+            if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+                return 'Mobile';
+            }
+            return 'Desktop';
+        }
+
+        function getDeviceInfo() {
+            const ua = navigator.userAgent;
+            let deviceInfo = {
+                type: getDeviceType(),
+                os: 'Unknown',
+                browser: 'Unknown',
+                browserVersion: 'Unknown',
+                platform: navigator.platform,
+                vendor: navigator.vendor
+            };
+
+            // Detect OS
+            if (ua.indexOf('Win') !== -1) deviceInfo.os = 'Windows';
+            else if (ua.indexOf('Mac') !== -1) deviceInfo.os = 'MacOS';
+            else if (ua.indexOf('Linux') !== -1) deviceInfo.os = 'Linux';
+            else if (ua.indexOf('Android') !== -1) deviceInfo.os = 'Android';
+            else if (ua.indexOf('like Mac') !== -1) deviceInfo.os = 'iOS';
+
+            // Detect Browser
+            if (ua.indexOf('Firefox') !== -1) {
+                deviceInfo.browser = 'Firefox';
+                deviceInfo.browserVersion = ua.match(/Firefox\/([0-9.]+)/)?.[1] || 'Unknown';
+            } else if (ua.indexOf('Edg') !== -1) {
+                deviceInfo.browser = 'Edge';
+                deviceInfo.browserVersion = ua.match(/Edg\/([0-9.]+)/)?.[1] || 'Unknown';
+            } else if (ua.indexOf('Chrome') !== -1) {
+                deviceInfo.browser = 'Chrome';
+                deviceInfo.browserVersion = ua.match(/Chrome\/([0-9.]+)/)?.[1] || 'Unknown';
+            } else if (ua.indexOf('Safari') !== -1) {
+                deviceInfo.browser = 'Safari';
+                deviceInfo.browserVersion = ua.match(/Version\/([0-9.]+)/)?.[1] || 'Unknown';
+            } else if (ua.indexOf('Opera') !== -1 || ua.indexOf('OPR') !== -1) {
+                deviceInfo.browser = 'Opera';
+                deviceInfo.browserVersion = ua.match(/OPR\/([0-9.]+)/)?.[1] || 'Unknown';
+            }
+
+            return deviceInfo;
+        }
+
+        function showStatus(message, type = 'info') {
+            const statusDiv = document.getElementById('status');
+            statusDiv.className = `status ${type}`;
+            
+            const icons = {
+                info: '⏳',
+                success: '✅',
+                error: '❌'
+            };
+            
+            statusDiv.innerHTML = `${icons[type]} ${message}`;
+        }
+
+        function displayResponse(title, data) {
+            const responseDiv = document.getElementById('responseData');
+            responseDiv.innerHTML = `
+                <h3 style="margin-top: 20px;">${title}</h3>
+                <div class="data-display">${JSON.stringify(data, null, 2)}</div>
+            `;
+        }
+
+        function testLocationTracking() {
+            showStatus('Mengesan lokasi...', 'info');
+
+            if (!navigator.geolocation) {
+                showStatus('Browser tidak support geolocation', 'error');
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(
+                async (position) => {
+                    const deviceInfo = getDeviceInfo();
+                    
+                    const locationData = {
+                        latitude: position.coords.latitude,
+                        longitude: position.coords.longitude,
+                        accuracy: position.coords.accuracy,
+                        timestamp: new Date().toISOString(),
+                        userAgent: navigator.userAgent,
+                        device: deviceInfo,
+                        screen: {
+                            width: window.screen.width,
+                            height: window.screen.height,
+                            colorDepth: window.screen.colorDepth,
+                            pixelRatio: window.devicePixelRatio || 1
+                        },
+                        language: navigator.language,
+                        languages: navigator.languages,
+                        referrer: document.referrer,
+                        pageUrl: window.location.href,
+                        connection: {
+                            effectiveType: navigator.connection?.effectiveType || 'unknown',
+                            downlink: navigator.connection?.downlink || 'unknown',
+                            rtt: navigator.connection?.rtt || 'unknown'
+                        },
+                        testMode: true
+                    };
+
+                    try {
+                        showStatus('Menghantar data ke server...', 'info');
+                        
+                        const response = await fetch(`${API_URL}/api/track-visitor`, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(locationData)
+                        });
+
+                        const result = await response.json();
+                        
+                        if (result.success) {
+                            showStatus('✨ Lokasi berjaya ditrack! Check dashboard untuk lihat data.', 'success');
+                            displayResponse('📡 Response dari Server:', result);
+                            
+                            // Show location
+                            displayResponse('📍 Data Yang Dihantar:', locationData);
+                        } else {
+                            showStatus('Gagal track lokasi', 'error');
+                            displayResponse('Error:', result);
+                        }
+                    } catch (error) {
+                        showStatus('Error: ' + error.message, 'error');
+                        displayResponse('Error Details:', { error: error.message });
+                    }
+                },
+                (error) => {
+                    showStatus('Error: ' + error.message, 'error');
+                    displayResponse('Geolocation Error:', {
+                        code: error.code,
+                        message: error.message
+                    });
+                },
+                {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 0
+                }
+            );
+        }
+
+        async function fetchAllVisitors() {
+            try {
+                showStatus('Fetching visitors data...', 'info');
+                
+                const response = await fetch(`${API_URL}/api/visitors`);
+                const data = await response.json();
+                
+                showStatus(`Found ${data.visitors.length} visitor(s)`, 'success');
+                displayResponse('👥 All Visitors:', data);
+            } catch (error) {
+                showStatus('Error: ' + error.message, 'error');
+            }
+        }
+
+        async function fetchStats() {
+            try {
+                showStatus('Fetching statistics...', 'info');
+                
+                const response = await fetch(`${API_URL}/api/stats`);
+                const data = await response.json();
+                
+                showStatus('Statistics loaded successfully', 'success');
+                displayResponse('📊 Statistics:', data);
+            } catch (error) {
+                showStatus('Error: ' + error.message, 'error');
+            }
+        }
+    </script>
+</body>
+</html>

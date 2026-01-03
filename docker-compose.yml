@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  visitor-tracker:
+    image: aidilasyraf/aidil-visitor-tracker:latest
+    container_name: aidil-visitor-tracker
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./visitors-data.json:/app/visitors-data.json
+      - ./data:/app/data
+    environment:
+      - NODE_ENV=production
+      - PORT=3000
+      - TZ=Asia/Kuala_Lumpur
+      - ADMIN_USERNAME=aidil
+      - ADMIN_PASSWORD=P@ssw0rd123
+    networks:
+      - aidil-network
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+networks:
+  aidil-network:
+    driver: bridge
